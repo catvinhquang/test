@@ -27,11 +27,27 @@ try {
         document.getElementsByClassName('video-content')?.[0]?.remove();
         document.getElementsByClassName('box')?.[0]?.remove();
 
+        var html = document.getElementsByTagName('html')[0];
+        html.style.display = 'table';
+        html.style.width = '100%';
+        html.style.height = '100%';
+
+        var body = document.getElementsByTagName('body')[0];
+        body.style.display = 'table-cell';
+        body.style.width = '100%';
+        body.style.height = '100%';
+        body.style.verticalAlign = 'middle';
+
+        wrapper.style.width = '100%';
+
         const player = document.getElementById('video');
         if (player != null) {
+            player.style.padding = 'unset';
             player.style.borderRight = 'none';
             player.style.width = '100%';
             player.style.height = '100%';
+
+            document.getElementsByClassName('desktop video-player')[0].style.padding = 'unset';
         }
     }
 } catch (e) {
