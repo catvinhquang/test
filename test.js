@@ -1,5 +1,5 @@
 try {
-    alert('Ready for the simple life ?!');
+    // alert('Ready for the simple life ?!');
     
     document.getElementsByTagName('header')?.[0]?.remove();
     document.getElementById('primary-nav')?.remove();
