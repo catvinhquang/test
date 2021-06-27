@@ -1,2 +1,2 @@
 alert("Hello world 123! :)");
-document.body.style.background = "#ff0";
+document.body.style.background = "#f00";
