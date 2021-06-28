@@ -40,14 +40,21 @@ try {
 
         wrapper.style.width = '100%';
 
-        const player = document.getElementById('video');
-        if (player != null) {
-            player.style.padding = 'unset';
-            player.style.borderRight = 'none';
-            player.style.width = '100%';
-            player.style.height = '100%';
+        const divVideo = document.getElementById('video');
+        if (divVideo != null) {
+            divVideo.style.padding = 'unset';
+            divVideo.style.borderRight = 'none';
+            divVideo.style.width = '100%';
+            divVideo.style.height = '100%';
 
             document.getElementsByClassName('desktop video-player')[0].style.padding = 'unset';
+
+            const video = document.getElementsByTagName('video')?.[0];
+            if (video != null) {
+                video.muted = false;
+                video.play();
+                video.requestFullscreen();
+            }
         }
     }
 } catch (e) {
