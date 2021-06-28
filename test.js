@@ -39,5 +39,45 @@ function handleVideoSite() {
         video.muted = false;
         video.play();
         video.requestFullscreen();
+
+        video.addEventListener('touchstart', handleTouchStart, false);
+        video.addEventListener('touchmove', handleTouchMove, false);
     }
+}
+
+var xDown = null;
+var yDown = null;
+
+function handleTouchStart(e) {
+    xDown = e.touches[0].clientX;
+    yDown = e.touches[0].clientY;
+}
+
+function handleTouchMove(e) {
+    if (xDown == null || yDown == null) return;
+
+    var x = e.touches[0].clientX;
+    var y = e.touches[0].clientY;
+
+    var xDiff = xDown - x;
+    var yDiff = yDown - y;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (xDiff > 0) {
+            console.log('left');
+            window.history.back();
+        } else {
+            console.log('right');
+            window.history.back();
+        }
+    } else {
+        if (yDiff > 0) {
+            console.log('up');
+        } else {
+            console.log('down');
+        }
+    }
+
+    xDown = null;
+    yDown = null;
 }
