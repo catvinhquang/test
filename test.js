@@ -1,8 +1,4 @@
-import "https://raw.githubusercontent.com/catvinhquang/test/main/test2.js";
-
 try {
-    test();
-
     // alert('Ready for the simple life ?!');
     document.body.style.backgroundColor = '#000';
     document.getElementsByTagName('header')?.[0]?.remove();
