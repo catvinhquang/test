@@ -1,25 +1,27 @@
+var divWrapper = null;
+
 try {
-    // alert('Ready for the simple life ?!');
     document.body.style.backgroundColor = '#000';
     document.getElementsByTagName('header')?.[0]?.remove();
     document.getElementById('primary-nav')?.remove();
     document.getElementsByClassName('breadcrumb')?.[0]?.remove();
     document.getElementsByClassName('search')?.[0]?.remove();
     document.getElementsByTagName('footer')?.[0]?.remove();
-    var divWrapper = document.getElementById('wrapper');
+    divWrapper = document.getElementById('wrapper');
     divWrapper.style.backgroundColor = '#000';
     divWrapper.style.boxShadow = 'none';
 
     var url = window.location.href;
     if (url.includes('/video/')) {
-        divWrapper.style.width = '100%';
-        handleVideoSite();
+        handleVideoUrl();
     }
 } catch (e) {
     alert(e);
 }
 
-function handleVideoSite() {
+function handleVideoUrl() {
+    divWrapper.style.width = '100%';
+
     document.getElementsByClassName('play-right')?.[0]?.remove();
     document.getElementsByClassName('toolbar')?.[0]?.remove();
     document.getElementsByClassName('video-info')?.[0]?.remove();
@@ -43,41 +45,41 @@ function handleVideoSite() {
         video.addEventListener('touchstart', handleTouchStart, false);
         video.addEventListener('touchmove', handleTouchMove, false);
     }
-}
 
-var xDown = null;
-var yDown = null;
+    var xDown = null;
+    var yDown = null;
 
-function handleTouchStart(e) {
-    xDown = e.touches[0].clientX;
-    yDown = e.touches[0].clientY;
-}
-
-function handleTouchMove(e) {
-    if (xDown == null || yDown == null) return;
-
-    var x = e.touches[0].clientX;
-    var y = e.touches[0].clientY;
-
-    var xDiff = xDown - x;
-    var yDiff = yDown - y;
-
-    if (Math.abs(xDiff) > Math.abs(yDiff)) {
-        if (xDiff > 0) {
-            console.log('left');
-            window.history.back();
-        } else {
-            console.log('right');
-            window.history.back();
-        }
-    } else {
-        if (yDiff > 0) {
-            console.log('up');
-        } else {
-            console.log('down');
-        }
+    function handleTouchStart(e) {
+        xDown = e.touches[0].clientX;
+        yDown = e.touches[0].clientY;
     }
 
-    xDown = null;
-    yDown = null;
+    function handleTouchMove(e) {
+        if (xDown == null || yDown == null) return;
+
+        var x = e.touches[0].clientX;
+        var y = e.touches[0].clientY;
+
+        var xDiff = xDown - x;
+        var yDiff = yDown - y;
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+            if (xDiff > 0) {
+                console.log('left');
+                window.history.back();
+            } else {
+                console.log('right');
+                window.history.back();
+            }
+        } else {
+            if (yDiff > 0) {
+                console.log('up');
+            } else {
+                console.log('down');
+            }
+        }
+
+        xDown = null;
+        yDown = null;
+    }
 }
