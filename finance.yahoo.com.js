@@ -15,8 +15,8 @@ try {
   document.getElementById('mrt-node-Col2-14-AdUnitWithTdAds')?.remove();
   document.getElementById('mrt-node-Col2-15-LinkOut')?.remove();
   
-  console.log('Apply successful');
+  console.log('APPLY SUCCESSFUL');
 } catch(e) {
   console.log(e);
-  console.log('Apply failed');
+  console.log('APPLY FAILED');
 }
