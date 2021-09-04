@@ -1,1 +1,1 @@
-document.getElementById('androidSelect').click()
+document.getElementById('androidSelect').click();
