@@ -11,6 +11,6 @@ try {
   
   console.log('Apply successful');
 } catch(e) {
-  console.log('Apply failed');
   console.log(e);
+  console.log('Apply failed');
 }
