@@ -14,9 +14,9 @@ try {
   document.getElementById('mrt-node-Col2-1-QuoteModule')?.remove();
   document.getElementById('mrt-node-Col2-14-AdUnitWithTdAds')?.remove();
   document.getElementById('mrt-node-Col2-15-LinkOut')?.remove();
-  
+
   console.log('APPLY SUCCESSFUL');
-} catch(e) {
+} catch (e) {
   console.log(e);
   console.log('APPLY FAILED');
 }
