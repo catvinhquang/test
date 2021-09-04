@@ -1,6 +1,7 @@
 try {
   // home
   document.getElementById('mrt-node-Lead-1-Ad')?.remove();
+  document.getElementById('defaultLREC-sizer')?.remove();
 
   // /quote/*
   document.getElementById('mrt-node-Lead-0-Ad')?.remove();
