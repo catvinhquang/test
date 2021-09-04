@@ -5,6 +5,7 @@ try {
   document.getElementById('defaultLREC2-sizer')?.remove();
   document.getElementById('mrt-node-Col2-4-AdUnitWithTdAds')?.remove();
   document.getElementById('mrt-node-Col2-5-Ad')?.remove();
+  document.getElementById('mrt-node-Col2-6-LinkOut')?.remove();
   document.getElementsByClassName('controller gemini-ad native-ad-item Feedback Pos(r)')?.forEach(e => e.remove());
 
   // /quote/*
